@@ -1,4 +1,4 @@
-class Popup {
+export class Popup {
     constructor(className) {
       this._className = className;
       this.popup = document.querySelector(`.${className}`);
@@ -9,6 +9,12 @@ class Popup {
     if (e.key==='Escape') {
     this.close();
     }
+    }
+
+    setContent(contentNode) {
+      const containerContent= this.popup.querySelector(".popup__content");
+      containerContent.innerHTML= '';
+      containerContent.append(contentNode)
     }
 
     open() {

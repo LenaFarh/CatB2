@@ -6,7 +6,7 @@ const configApi = {
     }
     }
     
-    class Api {
+     class Api {
         constructor(config){
             this._url = config.url;
             this._headers = config.headers;
@@ -21,12 +21,14 @@ return res.ok ? res.json() : Promise.reject({...res, message: 'error'})
                     method: 'GET'   
             }).then(this._onResponce); 
         }
+
         getAllCatsIds(){
             // отобразить все возможные айди котиков
            return fetch(`${this._url}/ids`, {
              method: 'GET'   
             }).then(this._onResponce); 
         }
+        
         getCatById(id){
             //отобразить конкретного котика
           return  fetch(`${this._url}/show/${id}`, {
@@ -58,7 +60,7 @@ return res.ok ? res.json() : Promise.reject({...res, message: 'error'})
     }
     }
     
-    const api = new Api(configApi);
+    export const api = new Api(configApi);
     console.log(api);
     
     //const newCat = {

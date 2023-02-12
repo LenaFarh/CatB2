@@ -25,6 +25,7 @@
     background-color: var(--form-color);
     padding: 20px;
     position: relative;
+    width: 100%;
   }
   
   .popup__close {
